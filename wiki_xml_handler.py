@@ -41,7 +41,7 @@ class WikiXMLHandler(xml.sax.handler.ContentHandler):
                                     self._values['title'],
                                     self._values['text'],
                                     self._values['wikilinks'],
-                                    self._values['extlinks']))
+                                    #self._values['extlinks']))
                 self._page_count = len(self._pages)
     
     
@@ -64,4 +64,4 @@ class WikiXMLHandler(xml.sax.handler.ContentHandler):
         content = mwparserfromhell.parse(content)
         self._values['text'] = content.strip_code().strip()
         self._values['wikilinks'] = [x.title.strip_code() for x in content.filter_wikilinks()]
-        self._values['extlinks'] = [x.url.strip_code().strip() for x in content.filter_external_links()]
+        #self._values['extlinks'] = [x.url.strip_code().strip() for x in content.filter_external_links()]
