@@ -3,3 +3,5 @@
 .ipynb_checkpoints/Untitled-checkpoint.ipynb
 .ipynb_checkpoints/wiki_clean-checkpoint.ipynb
 *.csv
+.ipynb_checkpoints/test_mp-checkpoint.py
+.ipynb_checkpoints/wiki_xml_handler-checkpoint.py
