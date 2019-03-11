@@ -1,5 +1,7 @@
 import xml.sax
 import mwparserfromhell
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
 
 class WikiXMLHandler(xml.sax.handler.ContentHandler):
     """Content handler for Wiki XML data using SAX"""
@@ -10,6 +12,9 @@ class WikiXMLHandler(xml.sax.handler.ContentHandler):
         self._current_tag = None
         self._previous_tag = None
         self._pages = []
+        self._punctuations = set(['.', ',', ';', ':', '?', '!', '#', '\\', '/', '"', '\'', '\'\'', '´´', '´', '``', '`', '(', ')'])
+        self._stop_words = set(stopwords.words('english'))
+        self._filter = self._punctuations.union(self._stop_words)
         
         
     def characters(self, content):
@@ -30,13 +35,18 @@ class WikiXMLHandler(xml.sax.handler.ContentHandler):
         """Closing tag of element"""
         if name == self._current_tag:
             if name == 'text':
+                if self._redirect():
+                    self._skip_page = True
+                    pass
+                else:
+                    self._skip_page = False
                 self._process_page()
             elif name == 'id' and self._previous_tag == 'id':
                 pass
             else:
                 self._values[name] = ' '.join(self._buffer)
         if name == 'page':
-            if not self._redirect():
+            if not self._skip_page:
                 self._pages.append((self._values['id'],
                                     self._values['title'],
                                     self._values['text'],
@@ -47,10 +57,10 @@ class WikiXMLHandler(xml.sax.handler.ContentHandler):
     
     def _redirect(self):
         """Checking if the page is a redirect page or not"""
-        wiki = mwparserfromhell.parse(self._values['text'])
+        wiki = mwparserfromhell.parse(self._buffer)
         text = wiki.strip_code().split()
         if len(text) == 0:
-            return False
+            return True
         return text[0] == 'REDIRECT'
     
     
@@ -62,6 +72,10 @@ class WikiXMLHandler(xml.sax.handler.ContentHandler):
         content = mwparserfromhell.parse(self._buffer)
         content = content.strip_code().strip()
         content = mwparserfromhell.parse(content)
-        self._values['text'] = content.strip_code().strip()
+        text = content.strip_code().strip()
+        words = word_tokenize(text)
+        filtered_words = filter(lambda word: word not in self._filter, words)
+        text = [word for word in filtered_words]
+        self._values['text'] = text
         self._values['wikilinks'] = [x.title.strip_code() for x in content.filter_wikilinks()]
         self._values['extlinks'] = [x.url.strip_code().strip() for x in content.filter_external_links()]
