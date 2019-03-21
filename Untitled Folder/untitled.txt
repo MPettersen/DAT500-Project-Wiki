@@ -6,6 +6,7 @@ REFERENCES
 2. http://knowledge-shareing-xinyu.blogspot.com/2016/03/an-anatomy-of-implementation-of.html
     - Python
 3. https://sites.wustl.edu/neumann/courses/cse427s/labs/lab-9/
+    - Not that useful
 4. https://www.coursera.org/lecture/big-data-analysis/pagerank-optimization-gGbZo
 5. https://spark.apache.org/docs/latest/graphx-programming-guide.html
     - Scala
