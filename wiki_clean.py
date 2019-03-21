@@ -38,7 +38,7 @@ def preprocess_pages(data_path, save=True):
                 temp = []
                 for j, item in enumerate(page):
                     if j == 2:
-                        temp.append(j+1+len(item))
+                        temp.append(j+2+len(item))
                         temp.extend(item)
                     elif j == 3:
                         temp.insert(3, len(item))
