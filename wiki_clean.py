@@ -54,19 +54,19 @@ def preprocess_pages(data_path, save=True):
 
 
 def main():
-    #start = time()
-    ## Create a pool of workers to execute processes
-    #pool = Pool(processes = 4)
-#
-    ## Map (service, task), applies function to each partition 
-    #pool.map(preprocess_pages, partitions)
-#
-    #pool.close()
-    #pool.join()
-    #end = time()
-    #print(f'\nWhole dump preprocessed in {round(end-start)} seconds')
+    start = time()
+    # Create a pool of workers to execute processes
+    pool = Pool(processes = 6)
 
-    preprocess_pages(partitions[0])
+    # Map (service, task), applies function to each partition
+    pool.map(preprocess_pages, partitions)
+
+    pool.close()
+    pool.join()
+    end = time()
+    print(f'\nWhole dump preprocessed in {round(end-start)} seconds')
+
+    #preprocess_pages(partitions[0])
 
 
 if __name__ == '__main__':

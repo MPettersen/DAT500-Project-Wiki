@@ -52,7 +52,7 @@ class WikiXMLHandler(xml.sax.handler.ContentHandler):
                                     self._values['text'],
                                     self._values['wikilinks']))
                 self._page_count = len(self._pages)
-                print(f'Number of pages processed: {self._page_count}, Current page: {self._pages[-1][0]}')
+#                 print(f'Number of pages processed: {self._page_count}, Current page: {self._pages[-1][0]}')
     
     
     def _redirect(self):
