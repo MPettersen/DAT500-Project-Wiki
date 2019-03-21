@@ -12,3 +12,7 @@ Untitled Folder/.ipynb_checkpoints/untitled-checkpoint.txt
 downloader/.ipynb_checkpoints/downloader-checkpoint.ipynb
 PageRank/.ipynb_checkpoints/untitled-checkpoint.txt
 .ipynb_checkpoints/inverted_index-checkpoint.py
+*.pyc
+*.pyc
+.ipynb_checkpoints/wiki_clean-checkpoint.py
+*.csv

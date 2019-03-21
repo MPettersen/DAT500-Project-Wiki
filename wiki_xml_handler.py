@@ -50,9 +50,9 @@ class WikiXMLHandler(xml.sax.handler.ContentHandler):
                 self._pages.append((self._values['id'],
                                     self._values['title'],
                                     self._values['text'],
-                                    self._values['wikilinks'],
-                                    #self._values['extlinks']))
+                                    self._values['wikilinks']))
                 self._page_count = len(self._pages)
+                print(f'Number of pages processed: {self._page_count}, Current page: {self._pages[-1][0]}')
     
     
     def _redirect(self):
@@ -69,13 +69,12 @@ class WikiXMLHandler(xml.sax.handler.ContentHandler):
         Processing the text and retrieving the internal wikilinks and the
         external url-links.
         """
-        content = mwparserfromhell.parse(self._buffer)
-        content = content.strip_code().strip()
-        content = mwparserfromhell.parse(content)
-        text = content.strip_code().strip()
-        words = word_tokenize(text)
-        filtered_words = filter(lambda word: word not in self._filter, words)
-        text = [word for word in filtered_words]
-        self._values['text'] = text
+        content = mwparserfromhell.parse(
+            mwparserfromhell
+            .parse(self._buffer)
+            .strip_code()
+            .strip())
+        self._values['text'] = list(filter(
+            lambda word: word not in filters,
+            word_tokenize(content.strip_code().strip())))
         self._values['wikilinks'] = [x.title.strip_code() for x in content.filter_wikilinks()]
-        #self._values['extlinks'] = [x.url.strip_code().strip() for x in content.filter_external_links()]
