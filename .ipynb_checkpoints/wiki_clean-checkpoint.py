@@ -56,7 +56,7 @@ def preprocess_pages(data_path, save=True):
 def main():
     start = time()
     # Create a pool of workers to execute processes
-    pool = Pool(processes = 6)
+    pool = Pool(processes = 7)
 
     # Map (service, task), applies function to each partition
     pool.map(preprocess_pages, partitions)
