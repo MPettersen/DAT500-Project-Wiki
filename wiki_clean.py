@@ -57,8 +57,16 @@ def preprocess_pages(data_path, save=True):
 
 def main():
     start = time()
-    preprocess_pages('enwiki-20190220-pages-articles-multistream14.xml-p7697599p7744799.bz2')
+    
+    
     # Create a pool of workers to execute processes
+    # IMPORTANT!!!
+    #   It is vital to choose the number of processes carefully. Each process
+    #   can use in excess of 5GB RAM. Use these estimates if you are unsure:
+    #       4GB available: DO NOT RUN
+    #       8GB available: 1 process
+    #       16GB available: 2 processes
+    #       32GB available: 5 processes
     pool = Pool(processes = 6)
 
     # Map (service, task), applies function to each partition
@@ -66,9 +74,6 @@ def main():
 
     pool.close()
     pool.join()
-
-    #for partition in partitions:
-    #    preprocess_pages(partition)
 
     end = time()
     print(f'\nWhole dump preprocessed in {round(end-start)} seconds')    
