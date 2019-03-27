@@ -34,8 +34,8 @@ def preprocess_pages(data_path, save=True):
             break
     print(f'\nDone processing {data_path}, now writing csv-file')
     if save:
-        with open(output_folder+data_path+'.csv', 'w', encoding='utf-8') as csvFile:
-            writer = csv.writer(csvFile)
+        with open(output_folder+data_path+'.csv', 'w', encoding='utf-8', newline='') as csvFile:
+            writer = csv.writer(csvFile, delimiter='\t')
             for page in handler._pages:
                 temp = []
                 for j, item in enumerate(page):
@@ -47,7 +47,8 @@ def preprocess_pages(data_path, save=True):
                         temp.extend(dc(item))
                     else:
                         temp.append(dc(item))
-                writer.writerow(dc(temp))
+                if len(temp) > 0:
+                    writer.writerow(dc(temp))
         csvFile.close()
     end = time()
     print(f'{data_path} preprocessed in {round(end-start)} seconds')
@@ -67,7 +68,7 @@ def main():
     #       8GB available: 1 process
     #       16GB available: 2 processes
     #       32GB available: 5 processes
-    pool = Pool(processes = 6)
+    pool = Pool(processes = 5)
 
     # Map (service, task), applies function to each partition
     pool.map(preprocess_pages, partitions)
@@ -75,6 +76,7 @@ def main():
     pool.close()
     pool.join()
 
+    #preprocess_pages('wiki_test.bz2')
     end = time()
     print(f'\nWhole dump preprocessed in {round(end-start)} seconds')    
 

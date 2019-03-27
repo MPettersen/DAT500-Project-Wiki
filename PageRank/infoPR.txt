@@ -11,3 +11,4 @@ REFERENCES
 5. https://spark.apache.org/docs/latest/graphx-programming-guide.html
     - Scala
 6. https://spark.apache.org/docs/2.1.3/api/java/org/apache/spark/graphx/lib/PageRank.html
+7. https://github.com/apache/spark/blob/master/examples/src/main/python/pagerank.py
