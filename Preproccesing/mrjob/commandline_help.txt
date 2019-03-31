@@ -1,0 +1,1 @@
+python wiki_preprocessor.py -r inline test14.xml-p7697599p7744799 --output-dir result.txt
