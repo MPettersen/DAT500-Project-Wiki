@@ -50,8 +50,7 @@ class WikiXMLHandler(xml.sax.handler.ContentHandler):
                 self._pages.append((self._values['id'],
                                     self._values['title'],
                                     self._values['text'],
-                                    self._values['wikilinks'],
-                                    #self._values['extlinks']))
+                                    self._values['wikilinks']))
                 self._page_count = len(self._pages)
     
     

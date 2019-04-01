@@ -29,19 +29,21 @@ def preprocess_pages(data_path, save=True):
             parser.feed(line)
         except StopIteration:
             break
+    
+    print(f'\nDone with preprocessing {data_path}')
 
     if save:
         temp = []
         for i, page in enumerate(handler._pages):
-            bemp.append([])
+            temp.append([])
             for j, item in enumerate(page):
                 if j == 2:
-                    b[i].append(j+1+len(item))
-                    b[i].extend(item)
+                    temp[i].append(j+1+len(item))
+                    temp[i].extend(item)
                 elif j == 3:
-                    b[i].extend(item)
+                    temp[i].extend(item)
                 else:
-                    b[i].append(item)
+                    temp[i].append(item)
 
         csv = pd.DataFrame(temp)
         csv.to_csv('test.csv', index=False, header=False)

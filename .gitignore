@@ -7,3 +7,5 @@
 .ipynb_checkpoints/wiki_xml_handler-checkpoint.py
 PageRank/.ipynb_checkpoints/untitled-checkpoint.txt
 .ipynb_checkpoints/inverted_index-checkpoint.py
+*.pyc
+*.csv
