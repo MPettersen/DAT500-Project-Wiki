@@ -52,6 +52,7 @@ class WikiXMLHandler(xml.sax.handler.ContentHandler):
                                     self._values['text'],
                                     self._values['wikilinks']))
                 self._page_count = len(self._pages)
+                #print(f'Number of pages processed: {self._page_count}, Current page: {self._pages[-1][0]}')
     
     
     def _redirect(self):
@@ -69,12 +70,8 @@ class WikiXMLHandler(xml.sax.handler.ContentHandler):
         external url-links.
         """
         content = mwparserfromhell.parse(self._buffer)
-        content = content.strip_code().strip()
-        content = mwparserfromhell.parse(content)
-        text = content.strip_code().strip()
-        words = word_tokenize(text)
-        filtered_words = filter(lambda word: word not in self._filter, words)
-        text = [word for word in filtered_words]
-        self._values['text'] = text
         self._values['wikilinks'] = [x.title.strip_code() for x in content.filter_wikilinks()]
-        #self._values['extlinks'] = [x.url.strip_code().strip() for x in content.filter_external_links()]
+        content = mwparserfromhell.parse(content.strip_code().strip())
+        self._values['text'] = list(filter(
+            lambda word: word not in self._filter,
+            word_tokenize(content.strip_code().strip())))
