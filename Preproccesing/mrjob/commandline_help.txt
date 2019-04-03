@@ -1,1 +1,3 @@
-python wiki_preprocessor.py -r inline test14.xml-p7697599p7744799 --output-dir result.txt
+python test.py -r inline test14.xml-p7697599p7744799 --output-dir test
+
+python test.py -r inline result.txt\part-00001 --output-dir test

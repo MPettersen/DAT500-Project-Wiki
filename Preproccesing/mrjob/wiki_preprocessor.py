@@ -4,7 +4,6 @@ from nltk.corpus import stopwords
 import re
 import nltk
 import json
-nltk.download('stopwords')
 
 class MR_wikiprocessor(MRJob):      
 
@@ -16,6 +15,7 @@ class MR_wikiprocessor(MRJob):
         self.text = []
         self.in_links = False
         self.links = []
+        self.titles_to_ignore = ['Wikipedia:', 'File:', 'Template:']
         
     def return_tokens_wo_stopwords (self,s):
         punctuations = set(['.', ',', ';', ':', '?', '!', '#', '\\', '/', '"', '\'', '\'\'', '´´', '´', '``', '`', '(', ')'])
@@ -61,9 +61,11 @@ class MR_wikiprocessor(MRJob):
                 article_info.append(self.text)
                 article_info.append(self.links)
                 self.title = ""
+                temp_id = self.article_id
+                self.article_id = ""          
                 self.text = []
                 self.links = []
-                yield self.article_id, article_info
+                yield temp_id, article_info
             elif line.find('<text') != -1:
                 if line.find('#REDIRECT') != -1:
                         self.in_article = False
@@ -72,7 +74,7 @@ class MR_wikiprocessor(MRJob):
                 else:
                     self.in_text = True               
             elif line.find('<title>') != -1 and not self.Title:
-                if line.find('Wikipedia:') != -1:
+                if any(x in line for x in self.titles_to_ignore):
                     self.in_article = False
                 else:
                     i = line.find('>') + 1
@@ -82,6 +84,7 @@ class MR_wikiprocessor(MRJob):
                 self.article_id = line[i: line.find('<', i)]
         elif line.find('<page>') != -1:
             self.in_article = True
+            
                        
 if __name__ == '__main__':
     MR_wikiprocessor.run()
