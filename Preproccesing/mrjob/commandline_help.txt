@@ -1,3 +1,5 @@
-python wiki_preprocessor.py -r local enwiki-20190220-pages-articles-multistream1.xml-p10p30302 --output-dir result
+python wiki_preprocessor.py -r inline test14.xml-p7697599p7744799 --output-dir result
 
-python test.py -r inline result.txt\part-00001 --output-dir test
+python tf-idf_para.py -r inline text --output-dir tf_idf
+
+python tf-idf_para.py -r inline result/part-00000 --output-dir tf_idf
