@@ -23,7 +23,7 @@ class MR_TFIDF(MRJob):
     def mapper_get_n(self, article_id, article_info):
         self.article_count += 1
         article_info = list(article_info)
-        terms = list(article_info[0][1]) # double has to change in wiki_preprocessor
+        terms = list(article_info[0])
         N = len(terms)
         for term in terms:
             yield (article_id,term.lower(),N), 1
