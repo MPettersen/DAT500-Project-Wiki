@@ -1,0 +1,5 @@
+python wiki_preprocessor.py -r inline test14.xml-p7697599p7744799 --output-dir result
+
+python tf-idf_para.py -r inline text --output-dir tf_idf
+
+python tf-idf_para.py -r inline result/part-00000 --output-dir tf_idf
