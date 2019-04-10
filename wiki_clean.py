@@ -10,9 +10,9 @@ from wiki_xml_handler import WikiXMLHandler
 from multiprocessing import Pool
 from copy import deepcopy as dc
 
-input_folder = 'C:/data/'
-#input_folder = 'data/'
-output_folder = 'clean-data/'
+#input_folder = 'C:/data/'
+input_folder = 'data_no/'
+output_folder = 'clean-data-no/'
 partitions = [file for file in os.listdir(input_folder) if 'xml-p']
 
 def preprocess_pages(data_path, save=True):
@@ -68,15 +68,15 @@ def main():
     #       8GB available: 1 process
     #       16GB available: 2 processes
     #       32GB available: 5 processes
-    pool = Pool(processes = 5)
+    #pool = Pool(processes = 5)
 
     # Map (service, task), applies function to each partition
-    pool.map(preprocess_pages, partitions)
+    #pool.map(preprocess_pages, partitions)
 
-    pool.close()
-    pool.join()
+    #pool.close()
+    #pool.join()
 
-    #preprocess_pages('wiki_test.bz2')
+    preprocess_pages('nowiki-20190320-pages-articles-multistream.xml.bz2')
     end = time()
     print(f'\nWhole dump preprocessed in {round(end-start)} seconds')    
 

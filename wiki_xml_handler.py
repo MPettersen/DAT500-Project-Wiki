@@ -61,7 +61,7 @@ class WikiXMLHandler(xml.sax.handler.ContentHandler):
         text = wiki.strip_code().split()
         if len(text) == 0:
             return True
-        return text[0] == 'REDIRECT'
+        return text[0] == 'REDIRECT' or text[0] == 'OMDIRIGERING'
     
     
     def _process_page(self):

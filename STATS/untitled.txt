@@ -1,0 +1,105 @@
+Subset 15GB, 3 nodes, 7GB per node, spark.cleaner.ttl 1200, number of partitions 12, total execution time: 2h52m42s
+    Convergence at iteration 1: 0.8950915884
+    Convergence at iteration 2: 0.2522582857
+    Convergence at iteration 3: 0.0852531196
+    Convergence at iteration 4: 0.0322989911
+    Convergence at iteration 5: 0.0124823496
+    Convergence at iteration 6: 0.0048704771
+    Convergence at iteration 7: 0.001932981
+    Convergence at iteration 8: 0.0007530752
+    Convergence at iteration 9: 0.0002895265
+    Convergence at iteration 10: 0.0001102332
+    Convergence at iteration 11: 4.23388e-05
+    Convergence at iteration 12: 1.67778e-05
+    Convergence at iteration 13: 6.9085e-06
+    0.24961959326818245
+
+Subset 15GB, 3 nodes, 7GB per node, spark.cleaner.ttl 900, number of partitions 12, total execution time: 2h51m30s
+    Convergence at iteration 1: 0.8950915884
+    Convergence at iteration 2: 0.2522582857
+    Convergence at iteration 3: 0.0852531196
+    Convergence at iteration 4: 0.0322989911
+    Convergence at iteration 5: 0.0124823496
+    Convergence at iteration 6: 0.0048704771
+    Convergence at iteration 7: 0.001932981
+    Convergence at iteration 8: 0.0007530752
+    Convergence at iteration 9: 0.0002895265
+    Convergence at iteration 10: 0.0001102332
+    Convergence at iteration 11: 4.23388e-05
+    Convergence at iteration 12: 1.67778e-05
+    Convergence at iteration 13: 6.9085e-06
+    0.2496195932681754
+    
+Subset 15GB, 6 nodes, 7GB per node, spark.cleaner.ttl 900, number of partitions 12, total execution time: 55m18s
+    Convergence at iteration 1: 0.8950915884
+    Convergence at iteration 2: 0.2522582857
+    Convergence at iteration 3: 0.0852531196
+    Convergence at iteration 4: 0.0322989911
+    Convergence at iteration 5: 0.0124823496
+    Convergence at iteration 6: 0.0048704771
+    Convergence at iteration 7: 0.001932981
+    Convergence at iteration 8: 0.0007530752
+    Convergence at iteration 9: 0.0002895265
+    Convergence at iteration 10: 0.0001102332
+    Convergence at iteration 11: 4.23388e-05
+    Convergence at iteration 12: 1.67778e-05
+    Convergence at iteration 13: 6.9085e-06
+    0.24961959326817793
+
+Subset 15GB, 6 nodes, 7GB per node, spark.cleaner.ttl 900, number of partitions 24, total execution time: 34m57s
+    Convergence at iteration 1: 0.8950915884
+    Convergence at iteration 2: 0.2522582857
+    Convergence at iteration 3: 0.0852531196
+    Convergence at iteration 4: 0.0322989911
+    Convergence at iteration 5: 0.0124823496
+    Convergence at iteration 6: 0.0048704771
+    Convergence at iteration 7: 0.001932981
+    Convergence at iteration 8: 0.0007530752
+    Convergence at iteration 9: 0.0002895265
+    Convergence at iteration 10: 0.0001102332
+    Convergence at iteration 11: 4.23388e-05
+    Convergence at iteration 12: 1.67778e-05
+    Convergence at iteration 13: 6.9085e-06
+    0.24961959326804462
+
+Subset 15GB, 6 nodes, 7GB per node, spark.cleaner.ttl 240, number of partitions 24, total execution time: 46m26s
+    Convergence at iteration 1: 0.8950915884
+    Convergence at iteration 2: 0.2522582857
+    Convergence at iteration 3: 0.0852531196
+    Convergence at iteration 4: 0.0322989911
+    Convergence at iteration 5: 0.0124823496
+    Convergence at iteration 6: 0.0048704771
+    Convergence at iteration 7: 0.001932981
+    Convergence at iteration 8: 0.0007530752
+    Convergence at iteration 9: 0.0002895265
+    Convergence at iteration 10: 0.0001102332
+    Convergence at iteration 11: 4.23388e-05
+    Convergence at iteration 12: 1.67778e-05
+    Convergence at iteration 13: 6.9085e-06
+    0.24961959326804584
+
+Subset 15GB, 6 nodes, 7GB per node, spark.cleaner.ttl 500, number of partitions 24, total execution time:
+
+
+Subset 15GB, 6 nodes, 7GB per node, spark.cleaner.ttl 600, number of partitions 24, total execution time:
+
+
+Subset 15GB, 6 nodes, 7GB per node, spark.cleaner.ttl 500, number of partitions 48, total execution time:
+
+
+Subset 15GB, 6 nodes, 7GB per node, spark.cleaner.ttl 500, number of partitions 96, total execution time:
+
+
+Fullset 30GB, 6 nodes, 4GB per node, spark.cleaner.ttl 900, number of partitions 24, total execution time:
+
+
+Fullset 30GB, 6 nodes, 5GB per node, spark.cleaner.ttl 900, number of partitions 24, total execution time:
+
+
+Fullset 30GB, 6 nodes, 6GB per node, spark.cleaner.ttl 900, number of partitions 24, total execution time:
+
+
+Fullset 30GB, 6 nodes, 7GB per node, spark.cleaner.ttl 900, number of partitions 24, total execution time:
+
+
+Fullset 30GB, 6 nodes, 7GB per node, spark.cleaner.ttl 900, number of partitions 24, total execution time:

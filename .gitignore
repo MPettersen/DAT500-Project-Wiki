@@ -23,3 +23,5 @@ PageRank/.ipynb_checkpoints/untitled-checkpoint.txt
 *.pyc
 PageRank/Untitled.ipynb
 PageRank/.ipynb_checkpoints/Untitled-checkpoint.ipynb
+*.pyc
+__pycache__/wiki_xml_handler.cpython-37.pyc
