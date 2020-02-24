@@ -1,7 +1,7 @@
 import xml.sax
 import mwparserfromhell
-from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 
 class WikiXMLHandler(xml.sax.handler.ContentHandler):
     """Content handler for Wiki XML data using SAX"""
@@ -52,7 +52,6 @@ class WikiXMLHandler(xml.sax.handler.ContentHandler):
                                     self._values['text'],
                                     self._values['wikilinks']))
                 self._page_count = len(self._pages)
-                #print(f'Number of pages processed: {self._page_count}, Current page: {self._pages[-1][0]}')
     
     
     def _redirect(self):

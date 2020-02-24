@@ -1,4 +1,0 @@
-Page Rank:
-
-    1.  map TITLE with WIKILINKS
-    2.  

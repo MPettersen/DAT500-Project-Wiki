@@ -1,14 +1,14 @@
+import os
+import bz2
+import csv
+import xml.sax
 import numpy as np
 import pandas as pd
-import bz2
-import xml.sax
 import mwparserfromhell
-import os
-import csv
 from time import time
-from wiki_xml_handler import WikiXMLHandler
-from multiprocessing import Pool
 from copy import deepcopy as dc
+from multiprocessing import Pool
+from wiki_xml_handler import WikiXMLHandler
 
 #input_folder = 'C:/data/'
 input_folder = 'D:/GitHub/DAT500-Project-Wiki/data_no/'
