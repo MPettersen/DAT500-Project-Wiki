@@ -12,7 +12,7 @@ According to Google:
 
 ![PageRank example](PageRanks-Example.jpg "PageRank Example")
 
-[from Wikipedia](https://en.wikipedia.org/wiki/PageRank)
+[(from Wikipedia)](https://en.wikipedia.org/wiki/PageRank)
 
 ## TFIDF
 
@@ -32,4 +32,4 @@ tf–idf can be successfully used for stop-words filtering in various subject fi
 One of the simplest ranking functions is computed by summing the tf–idf for each query term;
 many more sophisticated ranking functions are variants of this simple model.
 
-[from Wikipedia](https://en.wikipedia.org/wiki/Tf–idf)
+[(from Wikipedia)](https://en.wikipedia.org/wiki/Tf–idf)
