@@ -10,7 +10,7 @@ According to Google:
 > PageRank works by counting the number and quality of links to a page to determine a rough estimate of how important the website is.
 > The underlying assumption is that more important websites are likely to receive more links from other websites.
 
-![PageRank example](PageRank-Example.jpg "PageRank Example")
+![PageRank example](PageRanks-Example.jpg "PageRank Example")
 
 [from Wikipedia](https://en.wikipedia.org/wiki/PageRank)
 
